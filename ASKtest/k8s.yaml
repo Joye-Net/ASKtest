@@ -1,29 +1,22 @@
----
-kind: Deployment
-apiVersion: apps/v1
+apiVersion: apps/v1beta2　　　　
+kind: Deployment　　　　　　　　　　
 metadata:
-  name: asktest
-  namespace: default
-  labels:
-    name: asktest
+  name: asktest　　　　　　　　
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: asktest
+      app: asktest
   template:
     metadata:
       labels:
-        name: asktest
+        app: asktest　　　　
     spec:
       containers:
-        - name: asktest
-          image: askhub.azurecr.io/image-workflow-1689606550537
-          ports:
-          - containerPort: 80
-          env: 
-           - name: ASPNETCORE_ENVIRONMENT
-             value: Development
-          imagePullPolicy: Always
-      imagePullSecrets:
-      - name: dockersecret
+      - name: asktest　　　　
+        image: askhub.azurecr.io/image-workflow-1689606550537　　
+        ports:
+        - containerPort: 1000　　　　
+        env:
+        - name: serverport
+          value: "1000"
