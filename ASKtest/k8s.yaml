@@ -1,0 +1,29 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: asktest
+  namespace: default
+  labels:
+    name: asktest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: asktest
+  template:
+    metadata:
+      labels:
+        name: asktest
+    spec:
+      containers:
+        - name: asktest
+          image: acrworkflow1689603323420.azurecr.io/image-workflow-1689603323420
+          ports:
+          - containerPort: 80
+          env: 
+           - name: ASPNETCORE_ENVIRONMENT
+             value: Development
+          imagePullPolicy: Always
+      imagePullSecrets:
+      - name: dockersecret
