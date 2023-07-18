@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: asktest1
+  name: asktest
   labels:
-    app: asktest1
+    app: asktest
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: asktest1
+      app: asktest
   template:
     metadata:
       labels:
-        app: asktest1
+        app: asktest
     spec:
       containers:
-        - name: asktest1
-          image: askhub.azurecr.io/image-workflow-1689650338818:latest
+        - name: asktest
+          image: askhub.azurecr.io/image-workflow-1689667444715:latest
           ports:
-            - containerPort: 5000
+            - containerPort: 80
