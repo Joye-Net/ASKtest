@@ -9,7 +9,7 @@ env:
     AZURE_CONTAINER_REGISTRY: askhub
     CLUSTER_NAME: myAKSCluster
     CLUSTER_RESOURCE_GROUP: K8SResourceGroup
-    CONTAINER_NAME: image-workflow-1689667111260
+    CONTAINER_NAME: image-workflow-1689667444715
     DEPLOYMENT_MANIFEST_PATH: |
         manifests/deployment.yaml
         manifests/service.yaml
@@ -28,7 +28,7 @@ jobs:
                 subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
                 tenant-id: ${{ secrets.AZURE_TENANT_ID }}
             - name: Build and push image to ACR
-              run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f Dockerfile ./
+              run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f Dockerfile ./ASKtest/
     deploy:
         permissions:
             actions: read

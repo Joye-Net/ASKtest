@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: asktest
-          image: askhub.azurecr.io/image-workflow-1689667111260:latest
+          image: askhub.azurecr.io/image-workflow-1689667444715:latest
           ports:
             - containerPort: 80
