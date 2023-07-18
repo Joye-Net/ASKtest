@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: asktest1
-          image: askhub.azurecr.io/asktest:40c0ede83ebd159a583d0502516c5dee7ff8a41c
+          image: askhub.azurecr.io/asktest:latest
           ports:
             - containerPort: 80
 ---
